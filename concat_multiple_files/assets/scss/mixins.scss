@@ -1,0 +1,77 @@
+@mixin dFlex($v_align: center, $h_align: center, $wrap: wrap, $direction: row) {
+    display: flex;
+    align-items: $v_align;
+    justify-content: $h_align;
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+}
+
+// common background images css across the website
+@mixin bg_image_m($url, $size: cover, $position: center, $repeat: no-repeat) {
+    background-image: url($url);
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
+}
+
+// for fonts
+@mixin font($size: 16px, $weight: 400, $family: "Arimo", $line_height: 1.5, $t_transform: unset, $ltr_spacing: 0) {
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+    line-height: $line_height;
+    text-transform: $t_transform;
+    letter-spacing: $ltr_spacing;
+}
+
+// media query mixin
+@mixin responsive($breakpoint) {
+    @if ($breakpoint ==big_desktop) {
+        @media (max-width: 1399.98px) {
+            @content;
+        }
+    }
+
+    @if ($breakpoint ==desktop) {
+        @media (max-width: 1199.98px) {
+            @content;
+        }
+    }
+
+    @if ($breakpoint ==tab_land) {
+        @media (max-width: 991.98px) {
+            @content;
+        }
+    }
+
+    @if ($breakpoint ==tab_port) {
+        @media (max-width: 767.98px) {
+            @content;
+        }
+    }
+
+    @if ($breakpoint ==mobile_land) {
+        @media (max-width: 575.98px) {
+            @content;
+        }
+    }
+
+    @if ($breakpoint ==mobile) {
+        @media (max-width: 479.98px) {
+            @content;
+        }
+    }
+}
+
+// use media query mixins as below
+// @include responsive("big_desktop") {
+//     background-color: $white;
+// }
+
+// @include responsive("desktop") {
+//     background-color: $black;
+// }
+
+// @include responsive("mobile_land") {
+//     background-color: red;
+// }

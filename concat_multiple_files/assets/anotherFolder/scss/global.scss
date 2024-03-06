@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font_dm_mono;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    counter-reset: section;
+}
+
+// font_dm_mono only for paragraphs
+p {
+    margin: 0;
+    padding: 0;
+    font-family: $font_dm_mono;
+}
+
+// font_dm_sans only for headings & anchor
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    color: $clr_212121;
+    font-family: $font_dm_sans;
+}
+
+p {
+    color: $clr_212121;
+}
+
+span,
+a {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+img,
+video {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+:root {
+    --containerWidth: 1320px;
+
+    @media (max-width: 1399.98px) {
+        --containerWidth: 1140px;
+    }
+
+    @media (max-width: 1199.98px) {
+        --containerWidth: 960px;
+    }
+
+    @media (max-width: 991.98px) {
+        --containerWidth: 720px;
+    }
+
+    @media (max-width: 767.98px) {
+        --containerWidth: 540px;
+    }
+
+    @media (max-width: 575.98px) {
+        --containerWidth: 100%;
+    }
+}
+
+.one_side_container {
+    position: relative;
+    width: calc(100% - (100% - var(--containerWidth)) / 2);
+    max-width: 100%;
+    padding: 0 12px;
+}
+
+.ml_auto {
+    margin-left: auto;
+}
+
+.pt_40 {
+    @extend %pt_40;
+}
+
+.pt_60 {
+    @extend %pt_60;
+}
+
+.pb_60 {
+    @extend %pb_60;
+}
+
+.pt_100 {
+    @extend %pt_100;
+}
+
+.pb_100 {
+    @extend %pb_100;
+}
+
+.pt_140 {
+    @extend %pt_140;
+}
+
+.fs_34 {
+    @extend %fs_34;
+}
+
+.fs_35 {
+    @extend %fs_35;
+}
+.fs_28 {
+    @extend %fs_28;
+}
+
+.fs_40 {
+    @extend %fs_40;
+}
+
+.fs_44 {
+    @extend %fs_44;
+}
+
+.fs_50 {
+    @extend %fs_50;
+}
+
+.fs_54 {
+    @extend %fs_54;
+}
+
+.fs_30 {
+    @extend %fs_30;
+}
+
+.fs_64 {
+    @extend %fs_64;
+}
+
+.fs_80 {
+    @extend %fs_80;
+}
+
+.sec_heading {
+    position: relative;
+
+    h2 {
+        position: relative;
+        line-height: 1.2;
+        font-weight: 600;
+        color: $clr_212121;
+        @extend %mb_40;
+    }
+
+    .inner {
+        position: relative;
+        @include dFlex($h_align: space-between);
+        @extend %mb_60;
+
+        @media (max-width: 767.98px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        h2 {
+            margin: 0;
+
+            @media (max-width: 767.98px) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section {
+    width: 1920px;
+    max-width: 100%;
+    margin: 0 auto;
+}
